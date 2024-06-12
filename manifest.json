@@ -1,0 +1,25 @@
+{
+  "name": "ad_kill",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "去百度广告",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "popup.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.baidu.com/*","http://*.baidu.com/*","https://*.baidu.com/*"],
+      "css":["style.css"],
+      "js":["main.js"],
+      "run_at":"document_start"
+    }
+  ],
+  "permissions": [
+    "https://*.baidu.com/*","tabs"
+  ]
+}
